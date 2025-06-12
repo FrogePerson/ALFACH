@@ -119,7 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b9e661422bbbd4c9f258b7510c4e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0
+  Wheel0: {fileID: 2434927864334458582}
+  Wheel1: {fileID: 7959866872741932637}
 --- !u!54 &8899158829073923411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -266,7 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b9e661422bbbd4c9f258b7510c4e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: -1
+  Wheel0: {fileID: 2803867896473369523}
+  Wheel1: {fileID: 3752193026006900746}
 --- !u!54 &432636191927741364
 Rigidbody:
   m_ObjectHideFlags: 0
