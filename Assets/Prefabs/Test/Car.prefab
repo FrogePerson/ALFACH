@@ -119,8 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b9e661422bbbd4c9f258b7510c4e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   Wheel0: {fileID: 2434927864334458582}
   Wheel1: {fileID: 7959866872741932637}
+  boost: 40
 --- !u!54 &8899158829073923411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -267,8 +269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b9e661422bbbd4c9f258b7510c4e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   Wheel0: {fileID: 2803867896473369523}
   Wheel1: {fileID: 3752193026006900746}
+  boost: 40
 --- !u!54 &432636191927741364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -296,6 +300,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 110
   m_CollisionDetection: 0
+--- !u!1 &1166558095291299050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7840060553213547723}
+  - component: {fileID: 5284077621734807940}
+  m_Layer: 0
+  m_Name: Rudder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7840060553213547723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166558095291299050}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2142564685728505623}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5284077621734807940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166558095291299050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69350079e39ce5640ac06691ddbdb3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newSpeed: 0
+  spin1: {fileID: 954351027416063064}
+  spin2: {fileID: 258029291788707989}
 --- !u!1 &1481412102394161094
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +940,7 @@ Transform:
   - {fileID: 1085742041572110929}
   - {fileID: 5047898892904383155}
   - {fileID: 2916737699443768580}
+  - {fileID: 7840060553213547723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2748263599969163494

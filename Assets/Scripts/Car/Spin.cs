@@ -5,7 +5,9 @@ using UnityEngine;
 public class Spin : MonoBehaviour
 {
 
-    public static float rotationSpeed = 6f;
+    public float speed = 0f;
+
+    float oldSpeed = 0f;
 
     [SerializeField] private GameObject Wheel0;
     [SerializeField] private GameObject Wheel1;
@@ -16,7 +18,12 @@ public class Spin : MonoBehaviour
     Rigidbody rbWheel1;
     Rigidbody rbWheel2;
     Rigidbody rbWheel3;
-    float counter = 0f;
+
+    public static float rotationSpeed = 6f;
+    public static float counter = 0f;
+    public static float direction = 0f;
+
+    public float boost = 40f;
 
     void Start()
     {
@@ -28,16 +35,29 @@ public class Spin : MonoBehaviour
 
     void FixedUpdate()
     {
-        rotationSpeed+=counter;
-        counter+=0.005f;
-        rb.MoveRotation(rb.rotation * Quaternion.Euler(0, -rotationSpeed, 0));
-        Vector3 force = transform.forward * (counter+50f);
 
-        if(rotationSpeed >= 50)
+        if (oldSpeed != speed)
         {
-            rotationSpeed = 50;
+            rotationSpeed = 6f;
+            counter = 0f;
+            direction = speed;
+            oldSpeed = speed;
         }
-        rbWheel0.AddForce(force, ForceMode.Force);
-        rbWheel1.AddForce(force, ForceMode.Force);
+
+        if(direction != 0)
+        {
+            rotationSpeed+=counter;
+            counter+=0.005f;
+            rb.MoveRotation(rb.rotation * Quaternion.Euler(0, -rotationSpeed* direction, 0));
+            Vector3 force = transform.forward * (counter+boost) * direction;
+
+            if(rotationSpeed >= 50)
+            {
+                rotationSpeed = 50;
+            }
+            rbWheel0.AddForce(force, ForceMode.Force);
+            rbWheel1.AddForce(force, ForceMode.Force);
+        }
+        
     }
 }
